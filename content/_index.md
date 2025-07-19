@@ -6,7 +6,7 @@ Software Consultancy Company
 
 ## About
 [Dixita](https://dixita.dev)
-[Dhruvin](https://dhruvin.dev)
+Dhruvin
 
 ## Contact
 [contact@duet.llc](mailto:contact@duet.llc)
