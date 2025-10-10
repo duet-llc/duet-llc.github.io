@@ -1,5 +1,7 @@
-+++
-+++
+---
+title: Duet LLC
+description: Software Consultancy Company
+---
 
 # Duet LLC
 Software Consultancy Company
