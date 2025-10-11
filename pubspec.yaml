@@ -1,6 +1,7 @@
 name: duet_llc_website
 description: Website for Duet LLC
 version: 0.0.1
+publish_to: none
 
 environment:
   sdk: ">=3.9.0 <4.0.0"
