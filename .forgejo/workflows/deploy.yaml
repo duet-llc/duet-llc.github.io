@@ -8,15 +8,14 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+      - name: install-lftp
+        run: sudo apt-get update && sudo apt-get install lftp
       - name: Setup Dart
         uses: dart-lang/setup-dart@v1
       - name: Install dependencies
         run: dart pub get
-      - name: Activate Jaspr CLI
-        run: dart pub global activate jaspr_cli
       - name: Build
-        run: |
-          jaspr build --verbose
+        run: dart run jaspr_cli:jaspr build --verbose
       - name: deploy
         run: |
           echo ${{ secrets.SFTP_HOST_KEYS }} >> $HOME/.ssh/known_hosts
