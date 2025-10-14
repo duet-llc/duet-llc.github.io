@@ -8,13 +8,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: install-lftp
+      - name: install lftp
         run: sudo apt-get update && sudo apt-get install lftp
-      - name: Setup Dart
-        uses: dart-lang/setup-dart@v1
-      - name: Install dependencies
+      - name: setup dart
+        uses: https://github.com/dart-lang/setup-dart@v1
+      - name: install dependencies
         run: dart pub get
-      - name: Build
+      - name: build
         run: dart run jaspr_cli:jaspr build --verbose
       - name: deploy
         run: |
