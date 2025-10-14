@@ -1,1 +1,3 @@
-/public
+.dart_tool/
+/build/
+*.log

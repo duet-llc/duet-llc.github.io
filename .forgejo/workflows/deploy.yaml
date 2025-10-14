@@ -8,15 +8,15 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: install-zola
-        uses: https://github.com/taiki-e/install-action@zola
       - name: install-lftp
         run: sudo apt-get update && sudo apt-get install lftp
-      - name: build
-        run: zola build
-      - name: check
-        run: zola check
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+      - name: Install dependencies
+        run: dart pub get
+      - name: Build
+        run: dart run jaspr_cli:jaspr build --verbose
       - name: deploy
         run: |
           echo ${{ secrets.SFTP_HOST_KEYS }} >> $HOME/.ssh/known_hosts
-          lftp -c "open ${{ secrets.SFTP_URL }} && mirror -Rev public /"
+          lftp -c "open ${{ secrets.SFTP_URL }} && mirror -Rev build/jaspr /"
