@@ -15,7 +15,9 @@ jobs:
       - name: install dependencies
         run: dart pub get
       - name: build
-        run: dart pub global run jaspr_cli:jaspr build --verbose
+        run: |
+          dart pub global activate jaspr_cli
+          jaspr build --verbose
       - name: deploy
         run: |
           echo ${{ secrets.SFTP_HOST_KEYS }} >> $HOME/.ssh/known_hosts
