@@ -105,6 +105,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.9.0"
+  build_web_compilers:
+    dependency: "direct dev"
+    description:
+      name: build_web_compilers
+      sha256: e93b5d5af529269f52b691f7542d859fba82982cadec23b19680c15c70f65378
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.3.0"
   built_collection:
     dependency: transitive
     description:
@@ -409,14 +417,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.3"
-  jaspr_web_compilers:
-    dependency: "direct dev"
-    description:
-      name: jaspr_web_compilers
-      sha256: "24179ab5b48b6eb554bf23d5a697b2649ccfb4e1ebb8776eb292d39d01fe0229"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.2.3+1"
   json_annotation:
     dependency: transitive
     description:
