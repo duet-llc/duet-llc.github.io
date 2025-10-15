@@ -1,6 +1,7 @@
 ---
 title: Duet LLC
 description: Software Consultancy Company
+layout: base
 ---
 
 # Duet LLC

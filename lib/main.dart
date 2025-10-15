@@ -1,3 +1,4 @@
+import 'package:duet_llc_website/layouts/base.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -11,6 +12,9 @@ void main() {
       parsers: [
         MarkdownParser(),
       ],
+      layouts: [
+        BaseLayout(),
+      ]
     ),
   );
 }
