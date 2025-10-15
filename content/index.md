@@ -4,12 +4,8 @@ description: Software Consultancy Company
 layout: base
 ---
 
-# Duet LLC
-Software Consultancy Company
-
-## About
-[Dixita](https://dixita.dev)
-Dhruvin
+A software consultancy by [Dixita](https://dixita.dev) and Dhruvin.
 
 ## Contact
-[contact@duet.llc](mailto:contact@duet.llc)
+
+Interested in working with us? Reach out at [contact@duet.llc](mailto:contact@duet.llc)
