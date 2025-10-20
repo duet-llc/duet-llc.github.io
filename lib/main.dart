@@ -14,7 +14,7 @@ void main() {
       ],
       layouts: [
         BaseLayout(),
-      ]
+      ],
     ),
   );
 }

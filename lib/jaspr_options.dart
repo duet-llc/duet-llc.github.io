@@ -4,10 +4,10 @@
 // GENERATED FILE, DO NOT MODIFY
 // Generated with jaspr_builder
 
-import 'package:jaspr/jaspr.dart';
 import 'package:duet_llc_website/components/logo.dart' as prefix0;
 import 'package:duet_llc_website/layouts/base.dart' as prefix1;
 import 'package:duet_llc_website/layouts/shared.dart' as prefix2;
+import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/components/theme_toggle.dart' as prefix3;
 
 /// Default [JasprOptions] for use with your jaspr project.

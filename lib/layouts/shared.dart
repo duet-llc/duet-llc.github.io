@@ -1,6 +1,6 @@
 import 'package:duet_llc_website/components/logo.dart';
-import 'package:jaspr_content/components/theme_toggle.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_content/components/theme_toggle.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 abstract class SharedLayout extends PageLayoutBase {

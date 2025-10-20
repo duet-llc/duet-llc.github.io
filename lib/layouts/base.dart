@@ -1,6 +1,6 @@
+import 'package:duet_llc_website/layouts/shared.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:duet_llc_website/layouts/shared.dart';
 
 class BaseLayout extends SharedLayout {
   const BaseLayout();
