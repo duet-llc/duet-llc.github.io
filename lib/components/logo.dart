@@ -1,25 +1,22 @@
 import 'package:jaspr/jaspr.dart';
 
 class Logo extends StatelessComponent {
-  const Logo({
-    this.lightSrc = 'assets/images/logo.svg',
-    this.darkSrc = 'assets/images/logo/logo-white.svg',
-    this.alt = 'Duet Logo',
-    this.width = 28,
-    this.height = 28,
-    super.key,
-  });
-
-  final String lightSrc;
-  final String darkSrc;
+  final String src;
   final String alt;
   final int width;
   final int height;
 
+  const Logo({
+    this.src = 'assets/images/logo.svg',
+    this.alt = 'Duet Logo',
+    this.width = 28,
+    this.height = 28,
+  });
+
   @override
   Component build(BuildContext context) {
     return img(
-      src: lightSrc,
+      src: src,
       alt: alt,
       width: width,
       height: height,
