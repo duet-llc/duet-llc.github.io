@@ -21,4 +21,4 @@ jobs:
       - name: deploy
         run: |
           echo ${{ secrets.SFTP_HOST_KEYS }} >> $HOME/.ssh/known_hosts
-          lftp -c "open ${{ secrets.SFTP_URL }} && mirror -Rev build/jaspr /"
+          lftp -c "open ${{ secrets.SFTP_URL }} && mirror -Rev -X .build.manifest -X '.dart_tool/**' -X 'packages/**' build/jaspr /"
