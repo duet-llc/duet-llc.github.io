@@ -1,4 +1,5 @@
 import 'package:duet_llc_website/components/logo.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/components/theme_toggle.dart';
 import 'package:jaspr_content/jaspr_content.dart';
@@ -45,7 +46,7 @@ abstract class SharedLayout extends PageLayoutBase {
         div([]),
         div(classes: 'title', [
           Logo(),
-          h1([text('Duet LLC')]),
+          h1([Component.text('Duet LLC')]),
         ]),
         ThemeToggle(),
       ]),
