@@ -1,36 +1,41 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub pages
 
 on:
   pull_request:
     types: [closed]
-    branches: ["main"]
-
-permissions:
-  pages: write
-  id-token: write
+    branches: [main]
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Dart
-        uses: dart-lang/setup-dart@v1.3
-      - name: Build Jaspr
+      - name: checkout
+        uses: actions/checkout@v6
+      - name: setup dart
+        uses: dart-lang/setup-dart@v1
+      - name: jaspr build
         run: |
           dart pub global activate jaspr_cli
           jaspr build --verbose
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: remove development files
+        run: rm -rf build/jaspr/.dart_tool build/jaspr/packages
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: 'build/jaspr'
-      - name: Deploy to GitHub Pages
+          path: build/jaspr
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on:
+      ubuntu-latest
+    steps:
+      - name: deploy to github pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
