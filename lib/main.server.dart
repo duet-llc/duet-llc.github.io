@@ -13,6 +13,7 @@ void main() {
         MarkdownParser(),
       ],
       layouts: [
+        BlogLayout(),
         BaseLayout(),
       ],
     ),
