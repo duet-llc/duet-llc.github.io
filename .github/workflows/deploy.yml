@@ -1,41 +1,30 @@
-name: Deploy to GitHub pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    steps:
-      - name: checkout
-        uses: actions/checkout@v6
-      - name: setup dart
-        uses: dart-lang/setup-dart@v1
-      - name: jaspr build
-        run: |
-          dart pub global activate jaspr_cli
-          jaspr build --verbose
-      - name: remove development files
-        run: rm -rf build/jaspr/.dart_tool build/jaspr/packages
-      - name: upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: build/jaspr
-
-  deploy:
-    needs: build
-    permissions:
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on:
-      ubuntu-latest
     steps:
-      - name: deploy to github pages
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
