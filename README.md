@@ -11,8 +11,7 @@ and open http://localhost:8000. Python is only needed for this optional local pr
 ## Deploy
 
 Push or merge to `main` to deploy `site/` through GitHub Actions to GitHub Pages.
-The workflow can also be run manually from the Actions tab. Repository Pages
-settings must use GitHub Actions as the deployment source.
+Repository Pages settings must use GitHub Actions as the deployment source.
 
 Changes prepared through ChatGPT use the same branch/PR and merge workflow.
 For another static host, upload the contents of `site/` unchanged.
