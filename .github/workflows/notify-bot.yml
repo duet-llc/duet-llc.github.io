@@ -1,0 +1,23 @@
+name: Notify website bot
+
+on:
+  issues:
+    types: [opened]
+
+permissions: {}
+
+jobs:
+  notify:
+    if: contains(fromJSON('["dhruvin-duet-llc","dixita-duet-llc"]'), github.event.issue.user.login)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post issue number to webhook
+        env:
+          GROK_WEBHOOK_URL: ${{ secrets.GROK_WEBHOOK_URL }}
+          GROK_WEBHOOK_AUTH: ${{ secrets.GROK_WEBHOOK_AUTH }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          curl -fsS -X POST "$GROK_WEBHOOK_URL" \
+            -H "Authorization: $GROK_WEBHOOK_AUTH" \
+            -H "Content-Type: application/json" \
+            -d "{\"issue\":${ISSUE_NUMBER}}"
